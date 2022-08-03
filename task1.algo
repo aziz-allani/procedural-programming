@@ -1,0 +1,36 @@
+FUNCTION dot_product(v1,v2:float) : float
+VAR
+   ps,i:integer;
+     tab1: ARRAY_OF float[3]; 
+   tab2: ARRAY_OF float[3]; 
+   
+BEGIN
+          FOR i  FROM 0 TO 2 STEP 1  DO
+           Write("Donnez l'element du vecteur v1");
+           Read(v1[i]);
+           Write("Donnez l'element du vecteur v2");
+           Read(v2[i]);
+          
+       END_FOR
+
+        ps:=0;  
+         FOR i  FROM 0 TO 2 STEP 1  DO
+          ps:=ps+v[i]*u[i];
+        
+       END_FOR  
+    RETURN ps ;
+    Write("Le produit scalaire des vecteurs v1 et v2",ps)
+
+    dot_product(v1,v2);
+    if (ps==0) THEN
+    Write("The two vectors of given IR are orthogonal");
+    else
+    Write("non orthogonal");
+    END_IF  
+
+
+END
+
+
+
+
