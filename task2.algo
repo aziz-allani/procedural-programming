@@ -8,24 +8,21 @@ BEGIN
 END
 
 /* *** ******************* */
-ALGORITHM 
+ALGORITHM insertionSort
 VAR
-    set_declarations
+    arr: ARRAY_OF_INTEGER[10];
+    i,j: INTEGER;
 BEGIN
+  Write("Write the length of the array, it must be <= to 10.")
+  Read (arr);
 
-/***********************************/
-PROCEDURE bubble_sort(VAR tab : ARRAY_OF INTEGER)
-VAR
-   i,j,n : INTEGER;
-BEGIN
-   n := tab.length;
-   FOR i FROM 0 TO n- 1 STEP 1  DO
-            
-       FOR j  FROM 0 TO n-i-1 STEP 1  DO
-           IF (tab[j] > tab[j+1]) THEN
-               swap(tab[j], tab[j+1])
-           END_IF
-       END_FOR
-   END_FOR
+  FOR i FROM 1 to arr.length-1 STEP 1 DO
+  j=i;
+  WHILE (j>0 && arr[j-1]> arr[j] ) THEN
+  swap (arr[j-1], arr[j]);
+  j=j-1;
+  END_WHILE;
+  END_FOR;
+
 END
 
